@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="stylesheet" href="./style.css">
+  <title>Navigation menu animated</title>
+</head>
+<body>
+
+  <nav class="nav-menu">
+    <ul class="nav-menu-item purple active">
+      <i class="uil uil-estate"></i>
+      <p class="nav-menu-link">Home</p>
+    </ul>
+    <ul class="nav-menu-item pink ">
+      <i class="uil uil-comment"></i>
+      <p class="nav-menu-link">Chat</p>
+    </ul>
+    <ul class="nav-menu-item yellow ">
+      <i class="uil uil-search"></i>
+      <p class="nav-menu-link">Search</p>
+    </ul>
+    <ul class="nav-menu-item teal">
+      <i class="uil uil-user-circle"></i>
+      <p class="nav-menu-link">Profile</p>
+    </ul>
+  </nav>
+
+  <script>
+
+    // DOM element
+    const navItems = document.querySelectorAll('.nav-menu-item');
+
+    // Event listener
+    navItems.forEach(clikedNavItems => clikedNavItems.addEventListener('click', () => {
+      // First remove the active link
+      navItems.forEach(removeNavItems => removeNavItems.classList.remove('active'));
+
+      // Add the active link on the current cliked tab
+      clikedNavItems.classList.add('active');
+
+      // Change the background
+      const clikedTabBgColor = getComputedStyle(clikedNavItems).getPropertyValue('color');
+
+      document.body.style.background = clikedTabBgColor;
+    }));
+
+  </script>
+
+</body>
+</html>
